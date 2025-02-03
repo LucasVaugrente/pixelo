@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
 from canvas import PixelCanvas
 from ui import ColorPalette
 
@@ -9,13 +9,11 @@ class PixelArtApp(QMainWindow):
         self.setWindowTitle("Pixelo")
         self.setGeometry(100, 100, 500, 500)
 
-        # Conteneur principal
         central_widget = QWidget(self)
         self.setCentralWidget(central_widget)
         layout = QVBoxLayout(central_widget)
 
-        # Ajout du canevas
-        self.canvas = PixelCanvas(16, 16, 20)  # Grille 16x16, pixels de 20px
+        self.canvas = PixelCanvas(32, 32, 10)
         layout.addWidget(self.canvas)
 
         self.palette = ColorPalette(self.canvas)

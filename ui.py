@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QPushButton, QHBoxLayout, QColorDialog
+from PyQt6.QtWidgets import QPushButton, QHBoxLayout, QColorDialog
 
 class ColorPalette(QHBoxLayout):
     def __init__(self, canvas):
@@ -13,7 +13,6 @@ class ColorPalette(QHBoxLayout):
             btn.clicked.connect(lambda checked, c=color: self.canvas.set_color(c))
             self.addWidget(btn)
 
-        # Bouton pour choisir une couleur personnalisée
         color_picker = QPushButton("🎨")
         color_picker.setFixedSize(40, 30)
         color_picker.clicked.connect(self.pick_color)
